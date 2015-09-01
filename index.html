@@ -1,0 +1,32 @@
+<!DOCTYE html>
+<html>
+<head>
+	<title>Time</title>
+	<style type="text/css">
+		#timer input[type=text] {width: 30px;}
+	</style>
+</head>
+<body ng-app="timeApp">
+	<div ng-controller="timeController">
+		Today is {{date | date:'longDate'}}<br>
+		Time: {{date | date:'HH:mm:ss'}}
+		<input type="button" ng-click="stopTime();" value="Stop"><br>
+		Stopwatch: <span><digit info="minute"></digit>:<digit info="second"></digit>.<digit info="milisecond"></digit></span>
+		<input type="button" value="Start" ng-click="startWatch();">
+		<input type="button" value="Stop" ng-click="stopWatch();">
+		<input type="button" value="Reset" ng-click="resetWatch();"><br>
+		Timer:
+		<div id="timer">
+			<input type="text" ng-model="timerHr">:
+			<input type="text" ng-model="timerMin">:
+			<input type="text" ng-model="timerSec">
+			<input type="button" value="Start Timer" ng-click="startTimer();">
+			<input type="button" value="Stop Timer" ng-click="stopTimer();">
+		</div>
+				<!--<div test></div>-->	
+	</div>
+</body>
+<script src="lib/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controllers/timeController.js"></script>
+</html>
